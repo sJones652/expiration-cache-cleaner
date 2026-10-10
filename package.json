@@ -1,6 +1,6 @@
 {
   "name": "expiration-cache-cleaner",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stores key-value pairs with time-based expiration and provides a sweep function that removes all entries older than their specified lifetime.",
   "type": "module",
   "main": "src/index.js",
