@@ -28,3 +28,10 @@ The clock is a constructor argument rather than a dependency on `Date.now()` dir
 ## Exports
 
 - `ExpirationCacheCleaner` — the only class. Constructor: `new ExpirationCacheCleaner(clock, defaultTtl = Infinity)`. Methods: `set(key, value, ttl?)`, `get(key)`, `delete(key)`, `sweep()`, `size()`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
